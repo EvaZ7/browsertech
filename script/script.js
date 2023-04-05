@@ -11,7 +11,7 @@ function createCheckboxWithLocalStorage(imgElementId, checkboxElementId, localSt
     const imgSrc = localStorage.getItem(localStorageKey);
     if (imgSrc) {
     console.log(imgSrc)
-    list.insertAdjacentHTML("beforeend", `<li><label for="${checkboxElementId}"><a href="detail.html"><img src="${imgSrc}" id="${imgElementId}"></a></label></li>`)
+    list.insertAdjacentHTML("beforeend", `<li><label><a href="detail.html"><img src="${imgSrc}" id="${imgElementId}"></a></label></li>`)
     // <input type="checkbox" id="${checkboxElementId}">
     //     <label for="${checkboxElementId}"><a href="detail.html"><img src="${imgSrc}" id="${imgElementId}"></a></label>
     checkbox.checked = true;
@@ -47,4 +47,13 @@ function createCheckboxWithLocalStorage(imgElementId, checkboxElementId, localSt
   createCheckboxWithLocalStorage('image10img', 'image10', 'imageSrc10');
   
   
-  
+
+// const sliderImg = document.querySelectorAll("main.carousel ul li")
+// function slider () {
+//   sliderImg.forEach((element) => {
+//     element.classList.add('moveit');
+//     element.classList.remove('moveit');
+//     console.log("moved")
+//   });
+// }
+// setTimeout(slider, 3000);
