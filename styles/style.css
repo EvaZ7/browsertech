@@ -1,0 +1,438 @@
+/*importeren custom font*/
+@font-face {
+  font-family: "mortend";
+  src: url("../assets/fonts/mortendbold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "spacegrotesklight";
+  src: url("../assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+/*************/
+/* CSS RESET */
+/*************/
+
+/*naar een idee van Jen Simmons*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button:not([disabled]) {
+  cursor: pointer;
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+  --text-white: rgb(255, 247, 239);
+  --background-black: rgb(24, 24, 24);
+  --decoration-yellow: rgb(254, 184, 41);
+  --decoration-red: rgb(241, 14, 14);
+}
+
+/**************/
+/*** BASICS ***/
+/**************/
+body {
+  background: linear-gradient(135deg, rgb(2, 4, 29), var(--background-black));
+  position: relative;
+  min-height: 100dvh;
+  padding-bottom: 3em;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: var(--text-white);
+  font-family: "mortend", Courier, monospace;
+
+  font-size: 1.5em;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/**************/
+/*** FOOTER ***/
+/**************/
+footer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: var(--background-black);
+  color: var(--text-white);
+  height: 4em;
+  font-family: "spacegrotesklight";
+  font-weight: 100;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+/**************/
+/*** HEADER ***/
+/**************/
+header {
+  position: sticky;
+  top: 0;
+
+  background-color: var(--background-black);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 1em;
+  z-index: 2;
+}
+
+header a:first-of-type {
+  grid-area: 1/2;
+}
+
+header a:nth-of-type(2) {
+  font-family: "spacegrotesklight";
+  font-size: 1em;
+  font-weight: 900;
+
+  background-color: var(--decoration-yellow);
+  color: var(--decoration-red);
+  padding: 1em;
+  border-radius: 0.5em;
+  grid-area: 1/3;
+}
+
+/**************/
+/**** MAIN ****/
+/**************/
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+label {
+  color: var(--text-white);
+  font-family: "spacegrotesklight";
+}
+
+/*Text create a collection*/
+main legend {
+  padding-top: 0.5em;
+  text-align: center;
+  color: var(--text-white);
+  font-family: "mortend";
+  font-size: 2.5em;
+}
+
+/*each input and label*/
+main li {
+  padding-bottom: 2em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+/* main li input[type='checkbox'] {
+  font-size: 2em;
+} */
+
+/****************/
+/*** HOMEPAGE ***/
+/****************/
+
+/*pictures*/
+main.home img {
+  width: 80vw;
+} 
+main.home label {
+  background-color: var(--decoration-yellow);
+}
+main.home li input{
+  z-index: 1;
+  position: absolute;
+}
+
+/*create collection button*/
+main.home form > a,
+main.collection > a{
+  font-family: "spacegrotesklight";
+  font-size: 1em;
+  font-weight: 500;
+
+  padding: 1em 1em 1em 1em;
+  background-color: var(--decoration-yellow);
+  color: var(--decoration-red);
+  border: 0;
+  border-radius: 0.5em;
+
+  position: fixed;
+  bottom: 1.5em;
+  right: 1em;
+  z-index: 2;
+}
+
+/*selected items*/
+main.home h2 {
+  color: var(--text-white);
+  font-family: "spacegrotesklight";
+  margin: 1em;
+  font-weight: 200;
+}
+main.home > ul {
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+}
+
+main.home > ul li {
+  margin: 1em;
+}
+
+main.home > ul li img{
+  height: 40vw;
+  max-height: 10em;
+  width: auto;
+}
+main.home > ul li label{
+  background-color: transparent;
+}
+
+
+/* main.home form > input:hover {
+
+} */
+
+/***********/
+/*** ADD ***/
+/***********/
+/*form styling*/
+main.add ul {
+  width: 80vw;
+}
+main.add li label {
+  padding-bottom: 0.5em;
+  padding-top: 0.8em;
+  font-size: 1.2em;
+}
+main.add li input:not(main.add li:first-of-type input) {
+  height: 2.5em;
+  border: none;
+  background-color: var(--text-white);
+
+  font-family: "spacegrotesklight";
+  font-size: 1em;
+  color: var(--background-black);
+
+  border-radius: 0.5em;
+}
+main.add li input:not(main.add li:first-of-type input):focus {
+  outline: solid 0.2em var(--decoration-yellow);
+}
+
+/*choose file button*/
+form input[type="file"]::-webkit-file-upload-button,
+main.add form > input {
+  font-family: "spacegrotesklight";
+  font-weight: 900;
+  font-size: 1em;
+
+  background-color: var(--decoration-yellow);
+  border: none;
+  border-radius: 0.5em;
+  padding: 1em 0.5em 1em 0.5em;
+
+  color: var(--decoration-red);
+
+  cursor: pointer;
+}
+form input[type="file"] {
+  color: var(--decoration-yellow);
+}
+form input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: var(--decoration-red);
+  color: var(--decoration-yellow);
+}
+
+/*fake submit button*/
+main.add form > input {
+  display: flex;
+  justify-content: center;
+  font-family: "mortend";
+  margin-bottom: 4em;
+  width: 80vw;
+  font-size: 1em;
+}
+
+/**************/
+/*** DETAIL ***/
+/**************/
+main.detail {
+  color: var(--text-white);
+  font-family: "spacegrotesklight";
+}
+main.detail ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+main.detail ul li {
+  width: 80vw;
+  max-width: 30em;
+  padding-bottom: 1em;
+}
+main.detail ul li:first-of-type {
+  padding-bottom: 0.5em;
+  background-color: var(--decoration-yellow);
+  margin-bottom: 1em;
+  max-width: 30em;
+}
+main.detail ul li p:first-of-type {
+  color: var(--decoration-yellow);
+  padding-bottom: 0em;
+  margin-bottom: 0.3em;
+  font-weight: 500;
+}
+main.detail ul li p:last-of-type {
+  padding-bottom: 0em;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+/******************/
+/*** COLLECTION ***/
+/******************/
+main.collection h2 {
+  text-align: center;
+  color: var(--text-white);
+  font-family: "mortend";
+  font-size: 2.5em;
+}
+main.collection ul > li:nth-child(-n+10),
+main.carousel ul > li:nth-child(-n+10) {
+  display: none;
+}
+main.collection ul {
+  display: flex;
+  overflow-x: scroll;
+  justify-self: center;
+}
+main.collection li {
+  margin: 1em;
+}
+
+main.collection img {
+  height: 40vw;
+  max-height: 10em;
+  width: auto;
+}
+
+main.collection img:hover {
+  filter: brightness(50%);
+}
+main.collection ul a:focus {
+  background-color: var(--decoration-yellow);
+  outline: none;
+}
+
+/****************/
+/*** CAROUSEL ***/
+/****************/
+main.carousel ul{
+  height: 90dvh;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  
+  scroll-behavior: smooth;
+  /* -webkit-overflow-scrolling: touch; */
+  
+}
+
+main.carousel ul li {
+  width: 100vw;
+  scroll-snap-align: start;
+}
+
+main.carousel ul li img {
+  width: 100vw
+}
+
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width: 60em) {
+  main.home ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5em;
+    grid-template-rows: masonry;
+  }
+  main.home > ul {
+    display: flex;
+  }
+  main.home form li {
+    padding-bottom: 0.2em;
+    background-color: var(--decoration-yellow);
+  }
+  main.home li label{
+    display: flex;
+    justify-content: center;
+  } 
+  main.home li img {
+    width: auto;
+    height: 10em;
+  } 
+
+  /*create collection button*/
+  main.home form > a,
+  main.collection > a {
+    bottom: 6em;
+    right: 2.5em;
+    font-size: 0.8em;
+  }
+
+  /*submit button form add to photos and form*/
+  main.add form > input,
+  main.add ul {
+    width: 30vw;
+  }
+  /*labels of the form for add photo*/
+  main.add li label {
+    padding-top: 0.5em;
+    font-size: 1em;
+  }
+
+  /*detailpage info*/
+  main.detail ul li {
+    width: 30vw;
+  }
+
+  main.carousel ul li img {
+    height: 90dvh;
+    width: auto;
+  }
+}

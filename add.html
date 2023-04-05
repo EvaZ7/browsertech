@@ -12,31 +12,44 @@
 </head>
 <body>
 <header>
-    <a href="index.html"><img src="images/logo.png"><h1>Albums</h1></a>
+    <a href="index.html"><h1>Albums</h1></a>
     <a>Add +</a>
 </header>
-<main>
-<form>
+<main class="add">
+<form action="index.html">
     <fieldset>
         <legend>Add a photo</legend>
 
+    <ul>
+        <li>
         <label for="photo">Select your photo:</label>
-        <input type="file" id="photo">
+        <input type="file" id="photo" required>
+        </li>
 
+        <li>
         <label for="alt">Alt-text:</label>
-        <input type="text" id="alt">
+        <input type="text" id="alt" required>
+        </li>
 
+        <li>
         <label for="description">Description:</label>
         <input type="text" id="description">
+        </li>
 
+        <li>
         <label for="location">Location:</label>
         <input type="text" id="location">
+        </li>
 
-        <label for="photographer">Alt-text:</label>
+        <li>
+        <label for="photographer">Photographer:</label>
         <input type="text" id="photographer">
+        </li>
+    </ul>
     </fieldset>
-
-    <input type="submit">
+    
+    <input type="submit" value="Add to photos">
+    <a href="index.html">Add to photos</a>
 </form>
 </main>
 <footer>
