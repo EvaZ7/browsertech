@@ -1,4 +1,6 @@
-# browsertech
+# browsertech Albums
+
+[Albums](https://evaz7.github.io/browsertech/)
 
 Welkom bij mijn website voor browser technologies, tijdens dit vak heb een website gemaakt en hierbij progressive enhancement toegepast. Mijn website is een showcase van foto's waarmee je een collectie kan creëren, nieuwe foto's kan toevoegen en ze laten zien in een carrousel. Ik heb hierbij de volgende bronnen gebruikt:
 
