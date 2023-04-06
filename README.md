@@ -2,7 +2,7 @@
 
 [Albums](https://evaz7.github.io/browsertech/)
 
-![Frontpage](https://github.com/EvaZ7/Quotes/blob/4b05094b8fa3c4556e8e3799aaa9f918216d75d5/readmeimg/amazed.png)
+![Frontpage](https://github.com/EvaZ7/browsertech/blob/c8ce6d65de47cc539d967d74f3e03d5af446fc71/readmeimages/albumshomepage.png)
 
 Welkom bij mijn website voor browser technologies, tijdens dit vak heb een website gemaakt en hierbij progressive enhancement toegepast. Mijn website is een showcase van foto's waarmee je een collectie kan creëren, nieuwe foto's kan toevoegen en ze laten zien in een carrousel. Ik heb hierbij de volgende bronnen gebruikt:
 
